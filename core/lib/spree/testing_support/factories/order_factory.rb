@@ -3,7 +3,7 @@ FactoryGirl.define do
     user
     bill_address
     completed_at nil
-    email { user.email }
+    sequence(:email) { |n| "foo#{n}@gmail.com" }
     store
 
     transient do

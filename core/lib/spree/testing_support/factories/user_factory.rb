@@ -4,7 +4,7 @@ FactoryGirl.define do
   end
 
   factory :user, class: Spree.user_class do
-    email { generate(:random_email) }
+    sequence(:email) { |n| "foo#{n}@gmail.com" }
     login { email }
     password 'secret'
     password_confirmation { password }
